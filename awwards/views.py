@@ -66,3 +66,14 @@ def profile(request):
     projects=Project.objects.filter(user=current_user)
 
     return render(request,'profile.html',{"projects":projects,"profile":profile})
+def new_project(request):
+    current_user = request.user
+    profile =Profile.objects.get(user=current_user)
+    if request.method =='POST':
+        form = ProjectForm(request.POST,request.FILES)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.username = current_user
+            project.avatar = profile.avatar
+
+            project.save()
