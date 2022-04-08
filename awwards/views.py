@@ -60,3 +60,9 @@ def create_profile(request):
         form=ProfileForm()
 
     return render(request,'create-profile.html',{"form":form})
+def profile(request):
+    current_user = request.user
+    profile =Profile.objects.get(user=current_user)
+    projects=Project.objects.filter(user=current_user)
+
+    return render(request,'profile.html',{"projects":projects,"profile":profile})
