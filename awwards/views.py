@@ -89,7 +89,7 @@ class MerchList(APIView):
         return Response(serializers.data)            
     
     class MerchList(APIView):
-    def get(self, request, format=None):
+def get(self, request, format=None):
         all_merch = Myprofile.objects.all()
         serializers = MerchSerializer(all_merch, many=True)
         return Response(serializers.data)
