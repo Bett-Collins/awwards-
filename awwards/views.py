@@ -12,3 +12,9 @@ def index(request):
         projects=Project.objects.all()
 
     return render(request,'index.html',{'projects':projects})
+def registeruser(request):
+    title = 'Register - awwards'
+    if request.method == 'POST':
+        form = CreateUserForm(request.POST)
+        if form.is_valid():
+            form.save()
