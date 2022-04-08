@@ -40,3 +40,6 @@ def loginpage(request):
 			password =request.POST.get('password')
 
 			user = authenticate(request, username=username, password=password)
+def logoutuser(request):
+    
+    return redirect(reverse('login'))
