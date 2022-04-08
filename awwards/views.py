@@ -43,3 +43,20 @@ def loginpage(request):
 def logoutuser(request):
     
     return redirect(reverse('login'))
+def create_profile(request):
+    current_user = request.user
+    
+    if request.method=='POST':
+        form = ProfileForm(request.POST,request.FILES)
+        if request.current_user.is_authenticated:
+            form.instance.user = request.user
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = current_user
+
+            profile.save()
+        return redirect('index')
+    else:
+        form=ProfileForm()
+
+    return render(request,'create-profile.html',{"form":form})
