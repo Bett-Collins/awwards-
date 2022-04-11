@@ -1,5 +1,17 @@
-from django.shortcuts import render
-from django.http  import HttpResponse
+from awwards.models import Profile,Project
+from django.shortcuts import render,redirect
+from .forms import CreateUserForm,ProfileForm,ProjectForm
+from django.contrib import messages
+from django.contrib.auth import authenticate,login,logout as dj_login
+from django.urls import reverse
+from django.core.exceptions import ObjectDoesNotExist
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .models import  Myprofile,Myprojects
+from .serializer import MerchSerializer
+
+
+
 
 # Create your views here.
 def index(request):
@@ -12,15 +24,14 @@ def index(request):
         projects=Project.objects.all()
 
     return render(request,'index.html',{'projects':projects})
+
 def registeruser(request):
     title = 'Register - awwards'
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-            
-            
-        messages.success(request, 'Account Created Successfully!. Check out our Email later :)')
+            messages.success(request, 'Account Created Successfully!. Check out our Email later :)')
 
             return redirect('login')
     else:
@@ -40,9 +51,22 @@ def loginpage(request):
 			password =request.POST.get('password')
 
 			user = authenticate(request, username=username, password=password)
+
+			if user is not None:
+				login(request, user)
+				return redirect('index')
+			else:
+				messages.info(request, 'Username or password is incorrect')
+
+		context = {}
+		return render(request, 'registration/login.html', context)
+
+
+
 def logoutuser(request):
     
     return redirect(reverse('login'))
+
 def create_profile(request):
     current_user = request.user
     
@@ -60,12 +84,14 @@ def create_profile(request):
         form=ProfileForm()
 
     return render(request,'create-profile.html',{"form":form})
+
 def profile(request):
     current_user = request.user
     profile =Profile.objects.get(user=current_user)
     projects=Project.objects.filter(user=current_user)
 
     return render(request,'profile.html',{"projects":projects,"profile":profile})
+
 def new_project(request):
     current_user = request.user
     profile =Profile.objects.get(user=current_user)
@@ -77,7 +103,7 @@ def new_project(request):
             project.avatar = profile.avatar
 
             project.save()
-else:
+    else:
         form = ProjectForm()
 
     return render(request,'project.html',{"form":form})
@@ -86,10 +112,14 @@ class MerchList(APIView):
     def get(self, request, format=None):
         all_merch = Myprojects.objects.all()
         serializers = MerchSerializer(all_merch, many=True)
-        return Response(serializers.data)            
-    
-    class MerchList(APIView):
-def get(self, request, format=None):
+        return Response(serializers.data)
+
+class MerchList(APIView):
+    def get(self, request, format=None):
         all_merch = Myprofile.objects.all()
         serializers = MerchSerializer(all_merch, many=True)
         return Response(serializers.data)
+
+
+
+

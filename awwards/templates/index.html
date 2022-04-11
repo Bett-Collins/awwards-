@@ -1,0 +1,61 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load ratings %}
+
+{% block content%}
+<div class="container">
+    <div class="row">
+        <form class="card card-sm ">
+            <div class="card-body row no-gutters align-items-center">
+                <div class="col">
+                    <input type="search" name='item_name' placeholder="Search for projects"
+                        class="form-control form-control">
+
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-success" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        {% for project in projects %}
+        <div class=" col-sm-6 col-md-6 col-lg-6">
+            <div class="card my-2 ">
+                <div class="card-header bg-transparent border-light">
+
+
+                    <p class="ml-4"> {{project.username}}</p>
+
+                </div>
+               <b><h4 class="cap ml-4">  {{project.title}}</h4></b> 
+                <a style="text-decoration: none;" href="" class="btn btn-outline-light btn-sm m-1">
+
+                    <img class="image-thumbail" src="{{ project.screenshot1.url }}" width="500px" height="300px"
+                        alt="Card image cap"></a>
+
+               
+                <div class="desc ml-4">
+                    <h5>Description</h5>
+                    <p class=""> {{project.description}}</p>
+
+                </div>
+
+                <a href="{{project.link}}" class="ml-4">View link</a>
+
+                <div class="card-body">
+                    <h2>Rate it.</h2>
+                    {% ratings project %}
+                </div>
+
+
+            </div>
+        </div>
+        {% empty %}
+        <h2>No Projects ....</h2>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock%}
