@@ -1,5 +1,5 @@
 from pathlib import Path
-import django_on_heroku
+import django_heroku
 import dj_database_url
 from decouple import config,Csv
 import os
@@ -129,4 +129,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-django_on_heroku.settings(locals())
+django_heroku.settings(locals())
