@@ -13,18 +13,17 @@ It is a web application that allow users to post their projects and view their r
 * A user can view their profile page.
 ## Screenshots
 
-
-![Screenshot from 2022-04-13 01-36-21](https://user-images.githubusercontent.com/93243303/163067789-29d71ae3-8e5c-42c0-8512-efdeec35bc42.png)
-![Screenshot from 2022-04-13 01-37-14](https://user-images.githubusercontent.com/93243303/163067802-196196a6-4428-4b71-aff5-1ed3507fdfad.png)
-![Screenshot from 2022-04-13 01-36-42](https://user-images.githubusercontent.com/93243303/163067824-1d7d0a41-b8e2-4f81-9327-3642c044a55c.png)
-
-
 ###### Home page
  In the homepage, a user is able to login or sign up to be able to to view each project and its details.
-###### Posting a project
-An authenticated user is able to post their projects in this page
+![Screenshot from 2022-04-13 01-36-21](https://user-images.githubusercontent.com/93243303/163067789-29d71ae3-8e5c-42c0-8512-efdeec35bc42.png)
+
 ###### Login
 An existing user enters their details here to login. There is an option for signing up for new users.
+An authenticated user is able to post their projects in this page
+![Screenshot from 2022-04-13 01-37-14](https://user-images.githubusercontent.com/93243303/163067802-196196a6-4428-4b71-aff5-1ed3507fdfad.png)
+###### Posting a project
+![Screenshot from 2022-04-13 01-36-42](https://user-images.githubusercontent.com/93243303/163067824-1d7d0a41-b8e2-4f81-9327-3642c044a55c.png)
+
 ###### Rating a Project
 ## Technology used 
 * [Python3.8](https://www.python.org/)
