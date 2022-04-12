@@ -13,7 +13,7 @@ It is a web application that allow users to post their projects and view their r
 * A user can view their profile page.
 ## Screenshots
 
-![Screenshot from 2022-04-13 01-39-35](https://user-images.githubusercontent.com/93243303/163067796-23310c4a-34ef-4a01-bd5f-7fb78b9defc4.png)
+
 ![Screenshot from 2022-04-13 01-36-21](https://user-images.githubusercontent.com/93243303/163067789-29d71ae3-8e5c-42c0-8512-efdeec35bc42.png)
 ![Screenshot from 2022-04-13 01-37-14](https://user-images.githubusercontent.com/93243303/163067802-196196a6-4428-4b71-aff5-1ed3507fdfad.png)
 ![Screenshot from 2022-04-13 01-36-42](https://user-images.githubusercontent.com/93243303/163067824-1d7d0a41-b8e2-4f81-9327-3642c044a55c.png)
