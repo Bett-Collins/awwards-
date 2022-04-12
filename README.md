@@ -17,7 +17,7 @@ It is a web application that allow users to post their projects and view their r
  In the homepage, a user is able to login or sign up to be able to to view each project and its details.
 ![Screenshot from 2022-04-13 01-36-21](https://user-images.githubusercontent.com/93243303/163067789-29d71ae3-8e5c-42c0-8512-efdeec35bc42.png)
 
-###### Login
+###### signin
 An existing user enters their details here to login. There is an option for signing up for new users.
 An authenticated user is able to post their projects in this page
 ![Screenshot from 2022-04-13 01-37-14](https://user-images.githubusercontent.com/93243303/163067802-196196a6-4428-4b71-aff5-1ed3507fdfad.png)
