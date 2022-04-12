@@ -44,7 +44,8 @@ def search(request):
         message = "You haven't searched for anything, please try again"
     return render(request, 'search.html', {'message': message})  
 
-   @login_required(login_url='/accounts/login/')
+
+@login_required(login_url='/accounts/login/')
 def update_profile(request, id):
     profile_object = get_object_or_404(Profile, user_id=id)
     user_object = get_object_or_404(User, id=id)
