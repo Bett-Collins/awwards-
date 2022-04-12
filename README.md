@@ -1,6 +1,4 @@
 
-#name
-awwards
 [Collins Kiprotich](https://github.com/Bett-Collins)
 # Description 
 It is a web application that allow users to post their projects and view their ratings based on the design,usability and creativity.
