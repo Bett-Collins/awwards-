@@ -12,9 +12,11 @@ It is a web application that allow users to post their projects and view their r
 * View projects overall score.
 * A user can view their profile page.
 ## Screenshots
-![Screenshot from 2022-04-13 01-36-21](https://user-images.githubusercontent.com/93!)
-[Screenshot from 2022-04-07 13-16-25](https://user-images.githubusercontent.com/93243303/163067304-a9819ef4-6917-4d0d-92a6-55e775aac7f2.png)
-243303/163067249-5075abb6-dbb4-4086-9e7b-9a8906bda319.png)
+![Uploading Screenshot from 2022-04-13 01-36-21.png…]()
+![Uploading![![Uploading Screenshot from 2022-04-13 01-39-35.png…]()
+ Uploading Screenshot from 2022-04-13 01-37-14.png…]()
+ Screenshot from 2022-04-13 01-36-42.png…]()
+
 
 
 ###### Home page
